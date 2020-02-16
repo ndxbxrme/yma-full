@@ -1,0 +1,16 @@
+{
+  "name": "yma-full",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "yma": "git+https://github.com/ndxbxrme/yma.git",
+    "yma-core": "git+https://github.com/ndxbxrme/yma-core.git"
+  }
+}
