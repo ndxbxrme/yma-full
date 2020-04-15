@@ -1,5 +1,4 @@
 <!DOCTYPE html><html><head><meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1"></head><body><div class="header"><h2>farm app</h2></div><div class="body"><div class="qrcodes page"><div class="content"><select onchange="app.chooseItem(this.value)"><option>Select</option><option value="{&quot;id&quot;:&quot;1&quot;,&quot;type&quot;:&quot;person&quot;,&quot;name&quot;:&quot;John Smith&quot;}">Person - John Smith</option><option value="{&quot;id&quot;:&quot;2&quot;,&quot;type&quot;:&quot;person&quot;,&quot;name&quot;:&quot;Maggie Wright&quot;}">Person - Maggie Wright</option><option value="{&quot;id&quot;:&quot;3&quot;,&quot;type&quot;:&quot;equipment&quot;,&quot;name&quot;:&quot;Big Blue Tractor&quot;}">Equipment - Big Blue Tractor</option><option value="{&quot;id&quot;:&quot;4&quot;,&quot;type&quot;:&quot;equipment&quot;,&quot;name&quot;:&quot;Red Rotavator&quot;}">Equipment - Red Rotavator</option></select><img id="qrcode"></div></div><div class="scan page"><div class="scannerTitle"></div><video id="video"></video></div><div class="list page"><table><tr><th>Date</th><th>Name</th><th>Equipment</th><th>Time</th></tr><tbody class="listTable"></tbody></table></div></div><div class="nav"><a class="navButton" onclick="app.scan()">Scan</a><a class="navButton" onclick="app.list()">List</a></div><div class="footer"></div><script>
-
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -33741,6 +33740,7 @@ setState = async function(newState) {
   } catch (error) {}
   hidePages();
   if (!mobile()) {
+    document.querySelector('.nav').style.display = 'none';
     return showPage('qrcodes');
   }
   state = newState;
