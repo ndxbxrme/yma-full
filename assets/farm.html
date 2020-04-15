@@ -27467,7 +27467,7 @@ function fromByteArray (uint8) {
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, "html,\nbody {\n  margin: 0;\n  height: 100%;\n  min-height: 100%;\n  max-height: 100%;\n  font-family: sans-serif;\n  display: flex;\n  flex-direction: column;\n}\nhtml .header,\nbody .header {\n  padding: 0.5em;\n}\nhtml .body,\nbody .body {\n  flex: 1;\n  position: relative;\n  overflow: hidden;\n}\nhtml .page,\nbody .page {\n  display: none;\n}\nhtml .scan,\nbody .scan,\nhtml .qrcodes,\nbody .qrcodes {\n  flex-direction: column;\n  overflow: hidden;\n  height: 100%;\n}\nhtml .scan .scannerTitle,\nbody .scan .scannerTitle,\nhtml .qrcodes .scannerTitle,\nbody .qrcodes .scannerTitle {\n  padding: 0.5em;\n}\nhtml .list,\nbody .list {\n  padding: 0.5em;\n}\nhtml .list table th,\nbody .list table th {\n  text-align: left;\n}\nhtml .list table td,\nbody .list table td {\n  padding-bottom: 0.5em;\n}\nhtml video,\nbody video {\n  max-width: 100%;\n}\nhtml .nav,\nbody .nav {\n  display: flex;\n  border-top: 1px solid #ccc;\n}\nhtml .nav .navButton,\nbody .nav .navButton {\n  flex: 1;\n  text-align: center;\n  padding: 1em;\n}\n", ""]);
+exports.push([module.i, "html,\nbody {\n  margin: 0;\n  height: 100%;\n  min-height: 100%;\n  max-height: 100%;\n  font-family: sans-serif;\n  display: flex;\n  flex-direction: column;\n}\nhtml .header,\nbody .header {\n  padding: 0.5em;\n}\nhtml .body,\nbody .body {\n  flex: 1;\n  position: relative;\n  overflow: hidden;\n}\nhtml .page,\nbody .page {\n  display: none;\n}\nhtml .scan,\nbody .scan,\nhtml .qrcodes,\nbody .qrcodes {\n  flex-direction: column;\n  overflow: hidden;\n  height: 100%;\n}\nhtml .scan .scannerTitle,\nbody .scan .scannerTitle,\nhtml .qrcodes .scannerTitle,\nbody .qrcodes .scannerTitle {\n  padding: 0.5em;\n}\nhtml .list,\nbody .list {\n  padding: 0.5em;\n}\nhtml .list table,\nbody .list table {\n  width: 100%;\n}\nhtml .list table th,\nbody .list table th {\n  text-align: left;\n}\nhtml .list table td,\nbody .list table td {\n  padding-bottom: 0.5em;\n}\nhtml video,\nbody video {\n  max-width: 100%;\n}\nhtml .nav,\nbody .nav {\n  display: flex;\n  border-top: 1px solid #ccc;\n}\nhtml .nav .navButton,\nbody .nav .navButton {\n  flex: 1;\n  text-align: center;\n  padding: 1em;\n}\n", ""]);
 // Exports
 module.exports = exports;
 
@@ -33659,10 +33659,6 @@ mobile = __webpack_require__(/*! is-mobile */ "./node_modules/is-mobile/index.js
 
 msToHms = __webpack_require__(/*! ms-to-hms */ "./node_modules/ms-to-hms/index.js");
 
-QRCode.toDataURL('What\'s the deal, sugarhill?', function(err, url) {
-  return document.querySelector('#qrcode').src = url;
-});
-
 console.log(JSON.parse(localStorage.getItem('database')));
 
 state = 'LOADING';
@@ -33726,11 +33722,11 @@ drawList = function() {
   html = '';
   for (i = 0, len = database.length; i < len; i++) {
     dbItem = database[i];
-    html += `<tr class='${dbItem.finished ? "finshed" : void 0}'>
+    html += `<tr class='${dbItem.finished ? "finshed" : ""}'>
   <td class='date'>${new Date(dbItem.started).toLocaleString()}</td>
   <td class='name'>${dbItem.person.name}</td>
   <td class='equipment'>${dbItem.equipment.name}</td>
-  <td class='time'>${dbItem.finished ? msToHms(dbItem.finished - dbItem.started) : void 0}</td>
+  <td class='time'>${dbItem.finished ? msToHms(dbItem.finished - dbItem.started) : ""}</td>
 </tr>`;
   }
   return listTableElm.innerHTML = html;
@@ -33860,4 +33856,5 @@ module.exports = exported;
 
 /******/ });
 //# sourceMappingURL=main.js.map
+
 </script></body></html>
