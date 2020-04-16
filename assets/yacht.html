@@ -58791,9 +58791,9 @@ render = function() {
     return (n / Math.PI * 2 * 360).toFixed(0);
   };
   if (ship) {
-    pitch = pn(new Date().getTime() * 0.001, 235323.356, 88345.424) * 0.06;
-    yaw = pn(new Date().getTime() * 0.001, 23723.356, 88345.424) * 0.06;
-    roll = pn(new Date().getTime() * 0.001, 235323.356, 88645.424) * 0.06;
+    pitch = pn(new Date().getTime() * 0.001, 235323.356, 88345.424) * 0.12;
+    yaw = pn(new Date().getTime() * 0.001, 23723.356, 88345.424) * 0.12;
+    roll = pn(new Date().getTime() * 0.001, 235323.356, 88645.424) * 0.12;
     outputElm.innerHTML = toDeg(pitch) + '\n' + toDeg(roll) + '\n' + toDeg(yaw);
     ship.rotation.x = pitch; //pitch
     ship.rotation.z = roll; //roll
